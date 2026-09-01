@@ -36,16 +36,16 @@ h1,h2,h3{font-family:var(--font-head);font-weight:700;line-height:1.2}
 img{max-width:100%;height:auto;display:block}
 
 /* ── HERO ── */
-.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:2rem 1rem}
+.hero{min-height:100svh;display:flex;align-items:flex-end;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:2rem 1rem 3rem}
 .hero-bg{position:absolute;inset:0;background:url('img/hero-freedom.jpg') center/cover no-repeat}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,27,42,.7) 0%,rgba(13,27,42,.3) 40%,rgba(13,27,42,.6) 100%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,27,42,.4) 0%,rgba(13,27,42,.1) 30%,rgba(13,27,42,.1) 70%,rgba(13,27,42,.5) 100%)}
 .hero-content{position:relative;z-index:2;max-width:700px}
 .hero-flag{font-size:4rem;margin-bottom:1rem;animation:wave 2s ease-in-out infinite}
 @keyframes wave{0%,100%{transform:rotate(0deg)}25%{transform:rotate(15deg)}75%{transform:rotate(-10deg)}}
-.hero h1{font-size:clamp(2.2rem,6vw,4rem);color:var(--white);margin-bottom:1rem}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);color:var(--white);margin-bottom:1rem;text-shadow:0 3px 20px rgba(0,0,0,.6)}
 .hero h1 .accent{color:var(--red);font-style:italic}
 .hero h1 .gold{color:var(--gold)}
-.hero-sub{color:var(--blue-pale);font-size:clamp(1rem,2.5vw,1.3rem);margin-bottom:2rem;font-weight:300}
+.hero-sub{color:rgba(255,255,255,.95);font-size:clamp(1rem,2.5vw,1.3rem);margin-bottom:2rem;font-weight:400;text-shadow:0 2px 12px rgba(0,0,0,.5)}
 .hero-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--red);color:var(--white);padding:.8rem 2rem;border-radius:50px;font-size:1rem;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s;border:none;cursor:pointer}
 .hero-cta:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(230,57,70,.4)}
 
