@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Альбика, пора в Америку 🇺🇸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#E63946;
+  --blue:#1D3557;
+  --blue-light:#457B9D;
+  --blue-pale:#A8DADC;
+  --cream:#F1FAEE;
+  --white:#FFFFFF;
+  --gold:#D4A843;
+  --navy:#0D1B2A;
+  --text:#1B2838;
+  --text-mid:#4A5568;
+  --pink:#FF6B9D;
+  --orange:#FF8C42;
+  --purple:#7C3AED;
+  --green:#10B981;
+  --font-head:'Playfair Display',Georgia,serif;
+  --font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --radius:16px;
+  --shadow:0 4px 24px rgba(29,53,87,.1);
+  --shadow-lg:0 12px 48px rgba(29,53,87,.15);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--cream);line-height:1.7;font-size:16px;overflow-x:hidden}
+h1,h2,h3{font-family:var(--font-head);font-weight:700;line-height:1.2}
+img{max-width:100%;height:auto;display:block}
+
+/* ── HERO ── */
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--navy);position:relative;overflow:hidden;padding:2rem 1rem}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(230,57,70,.15) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(69,123,157,.2) 0%,transparent 50%);pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.hero-flag{font-size:4rem;margin-bottom:1rem;animation:wave 2s ease-in-out infinite}
+@keyframes wave{0%,100%{transform:rotate(0deg)}25%{transform:rotate(15deg)}75%{transform:rotate(-10deg)}}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);color:var(--white);margin-bottom:1rem}
+.hero h1 .accent{color:var(--red);font-style:italic}
+.hero h1 .gold{color:var(--gold)}
+.hero-sub{color:var(--blue-pale);font-size:clamp(1rem,2.5vw,1.3rem);margin-bottom:2rem;font-weight:300}
+.hero-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--red);color:var(--white);padding:.8rem 2rem;border-radius:50px;font-size:1rem;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s;border:none;cursor:pointer}
+.hero-cta:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(230,57,70,.4)}
+
+/* ── Photo Strip ── */
+.photo-strip{background:var(--white);padding:2rem 1rem;display:flex;justify-content:center;gap:1.5rem;overflow:hidden}
+.photo-strip img{width:180px;height:240px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .4s}
+.photo-strip img:nth-child(1){transform:rotate(-3deg)}
+.photo-strip img:nth-child(2){transform:rotate(1deg) scale(1.05)}
+.photo-strip img:nth-child(3){transform:rotate(3deg)}
+.photo-strip img:hover{transform:rotate(0deg) scale(1.1)!important;z-index:2}
+
+/* ── Section base ── */
+.section{padding:5rem 1.5rem}
+.section-inner{max-width:800px;margin:0 auto}
+.section-title{font-size:clamp(1.5rem,4vw,2.4rem);text-align:center;margin-bottom:.5rem;color:var(--navy)}
+.section-emoji{text-align:center;font-size:2.5rem;margin-bottom:1rem}
+.section-sub{text-align:center;color:var(--text-mid);font-size:1rem;margin-bottom:3rem;max-width:600px;margin-left:auto;margin-right:auto}
+.section-alt{background:var(--white)}
+.section-dark{background:var(--navy);color:var(--white)}
+.section-dark .section-title{color:var(--white)}
+.section-dark .section-sub{color:var(--blue-pale)}
+.section-red{background:var(--red);color:var(--white)}
+.section-red .section-title{color:var(--white)}
+
+/* ── Reason cards ── */
+.reason-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
+.reason{background:var(--white);border-radius:var(--radius);padding:1.8rem;box-shadow:var(--shadow);border-left:4px solid var(--red);transition:transform .3s}
+.reason:hover{transform:translateX(6px)}
+.reason-num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--red);color:var(--white);font-weight:800;font-size:.9rem;margin-bottom:.8rem}
+.reason h3{font-size:1.1rem;margin-bottom:.5rem;color:var(--navy)}
+.reason p{color:var(--text-mid);font-size:.92rem;line-height:1.7}
+.reason .tag{display:inline-block;background:var(--blue-pale);color:var(--blue);font-size:.72rem;font-weight:700;padding:.2rem .6rem;border-radius:20px;margin-top:.5rem;text-transform:uppercase;letter-spacing:.03em}
+
+/* ── VS table ── */
+.vs-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin:2rem 0}
+.vs-table thead{background:var(--navy)}
+.vs-table th{padding:1rem;text-align:center;color:var(--white);font-size:.9rem;font-weight:700}
+.vs-table th:first-child{text-align:left;width:40%}
+.vs-table td{padding:.8rem 1rem;font-size:.88rem;border-bottom:1px solid #eee;vertical-align:middle}
+.vs-table tr:last-child td{border-bottom:none}
+.vs-table td:nth-child(2){text-align:center;color:var(--red);font-weight:600}
+.vs-table td:nth-child(3){text-align:center;color:var(--green);font-weight:600}
+.vs-table tr:hover td{background:rgba(168,218,220,.15)}
+.vs-moscow{background:var(--white)}
+.vs-usa{background:rgba(241,250,238,.5)}
+
+/* ── Quote cards ── */
+.quote-card{background:var(--white);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.quote-card::before{content:'"';position:absolute;top:-.2rem;left:.8rem;font-size:5rem;color:var(--blue-pale);font-family:var(--font-head);line-height:1;opacity:.5}
+.quote-card p{position:relative;z-index:1;font-size:1rem;line-height:1.8;font-style:italic;color:var(--text)}
+.quote-card .author{font-style:normal;font-weight:700;color:var(--blue);margin-top:.8rem;font-size:.85rem}
+
+/* ── Stats row ── */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem 0}
+.stat-card{background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:1.5rem;text-align:center}
+.stat-num{font-family:var(--font-head);font-size:2.5rem;font-weight:900;color:var(--gold);line-height:1}
+.stat-label{font-size:.8rem;color:var(--blue-pale);margin-top:.3rem;font-weight:500}
+
+/* ── CTA final ── */
+.cta-block{text-align:center;padding:3rem 1.5rem}
+.cta-block h2{font-size:clamp(1.5rem,4vw,2.2rem);color:var(--white);margin-bottom:1rem}
+.cta-block p{color:rgba(255,255,255,.8);font-size:1rem;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+.cta-big{display:inline-flex;align-items:center;gap:.5rem;background:var(--white);color:var(--red);padding:1rem 2.5rem;border-radius:50px;font-size:1.1rem;font-weight:800;text-decoration:none;transition:transform .2s,box-shadow .2s;border:none;cursor:pointer}
+.cta-big:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 40px rgba(0,0,0,.2)}
+
+/* ── Checklist ── */
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.check-item{display:flex;align-items:flex-start;gap:.6rem;font-size:.9rem;line-height:1.5}
+.check-item .emoji{font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
+.check-item span{color:var(--text)}
+
+/* ── Timeline ── */
+.tl{position:relative;padding-left:2.5rem}
+.tl::before{content:'';position:absolute;left:.8rem;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--red),var(--blue),var(--gold),var(--green))}
+.tl-item{position:relative;margin-bottom:2rem}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-2.5rem;top:.3rem;width:22px;height:22px;border-radius:50%;background:var(--white);border:3px solid var(--red);z-index:1}
+.tl-item:nth-child(2) .tl-dot{border-color:var(--blue)}
+.tl-item:nth-child(3) .tl-dot{border-color:var(--gold)}
+.tl-item:nth-child(4) .tl-dot{border-color:var(--green)}
+.tl-item:nth-child(5) .tl-dot{border-color:var(--purple)}
+.tl-item h3{font-size:1rem;color:var(--navy);margin-bottom:.3rem}
+.tl-item p{font-size:.88rem;color:var(--text-mid);line-height:1.6}
+
+/* ── Footer ── */
+.footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;padding:1.5rem;font-size:.78rem}
+.footer a{color:var(--gold)}
+
+/* ── Fade animation ── */
+.fade{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}
+.fade.vis{opacity:1;transform:translateY(0)}
+
+/* ── Responsive ── */
+@media(max-width:768px){
+  .photo-strip{gap:.8rem;padding:1.5rem .5rem}
+  .photo-strip img{width:100px;height:140px;border-radius:10px}
+  .section{padding:3rem 1rem}
+  .reason{padding:1.3rem}
+  .stats-row{grid-template-columns:1fr}
+  .stat-num{font-size:2rem}
+  .check-grid{grid-template-columns:1fr}
+  .vs-table{font-size:.82rem}
+  .vs-table th,.vs-table td{padding:.6rem .5rem}
+  .tl{padding-left:2rem}
+  .tl-dot{left:-2rem;width:18px;height:18px}
+}
+@media(max-width:380px){
+  .hero h1{font-size:1.8rem}
+  .photo-strip img{width:85px;height:120px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-flag">🇺🇸</div>
+    <h1><span class="gold">Альбика</span>,<br>пора в <span class="accent">Америку</span></h1>
+    <p class="hero-sub">Москва тебя больше не вмещает. Грозный — тем более. Мир ждёт. Пора действовать.</p>
+    <a href="#reasons" class="hero-cta">Читать аргументы ↓</a>
+  </div>
+</section>
+
+<!-- ═══════════ PHOTOS ═══════════ -->
+<section class="photo-strip">
+  <img src="img/girl-lilacs.png" alt="Альбика" loading="lazy">
+  <img src="img/girl-diploma.png" alt="Альбика — магистр МГИМО" loading="lazy">
+  <img src="img/girl-flowers.jpg" alt="Альбика" loading="lazy">
+</section>
+
+<!-- ═══════════ SECTION: ПОЧЕМУ ПОРА ═══════════ -->
+<section class="section" id="reasons">
+  <div class="section-inner fade">
+    <div class="section-emoji">🧳</div>
+    <h2 class="section-title">Почему Альбике пора валить</h2>
+    <p class="section-sub">Объективный анализ ситуации, проведённый экспертами международного уровня (мной)</p>
+
+    <div class="reason-grid">
+
+      <div class="reason">
+        <div class="reason-num">1</div>
+        <h3>Москва — пройденный этап</h3>
+        <p>Ты уже знаешь каждую кофейню на Патриках, каждый ресторан на Кутузовском и каждый поворот Садового кольца. Москва от тебя устала. Ты от Москвы — тоже. Это не разрыв, это взаимное решение. Пора расти дальше.</p>
+        <span class="tag">Уровень: пройден</span>
+      </div>
+
+      <div class="reason">
+        <div class="reason-num">2</div>
+        <h3>Родительский контроль вышел из-под контроля</h3>
+        <p>Когда папа знает, что ты ела на обед, кому ты написала в WhatsApp и почему ты вернулась домой на 7 минут позже обычного — это уже не забота. Это система наблюдения уровня ФСБ. Даже Сноуден сбежал. Ты — следующая.</p>
+        <span class="tag">Уровень угрозы: оранжевый</span>
+      </div>
+
+      <div class="reason">
+        <div class="reason-num">3</div>
+        <h3>Жить с родителями в 22+ — это уже… ну ты поняла</h3>
+        <p>В Чечне это, конечно, «традиция» и «уважение к старшим». Но давай честно: когда мама заходит в комнату без стука в 11 вечера с тарелкой хинкала и вопросом «а чего не спишь?» — это не традиция. Это нарушение Женевской конвенции.</p>
+        <span class="tag">Пора на волю</span>
+      </div>
+
+      <div class="reason">
+        <div class="reason-num">4</div>
+        <h3>Чеченские каноны vs здравый смысл</h3>
+        <p>«Девушка должна сидеть дома». «Девушка не должна путешествовать одна». «Девушка должна выйти замуж до 25». Альбика. У тебя диплом магистра МГИМО. Ты говоришь на трёх языках. Ты не «девушка, которая должна». Ты — девушка, которая может.</p>
+        <span class="tag">Каноны: отклонены</span>
+      </div>
+
+      <div class="reason">
+        <div class="reason-num">5</div>
+        <h3>Мир — огромный, а ты видела 0.3% от него</h3>
+        <p>Есть 195 стран. Ты была в скольких? Вот именно. Там, за пределами маршрутки «Грозный — Москва», есть целая планета. С океанами, горами, людьми, которые едят палочками, и странами, где за тебя не решают, когда тебе замуж.</p>
+        <span class="tag">Планета: не изучена</span>
+      </div>
+
+      <div class="reason">
+        <div class="reason-num">6</div>
+        <h3>Суженый ждёт тебя не в Грозном</h3>
+        <p>Давай будем реалистами. Весь пул кандидатов в Чечне ты уже просмотрела — мимо. Московские олигархи с кризисом среднего возраста и Порше Кайеном — тоже не вариант. Пора выходить на международный рынок. Там конкуренция другая, но и качество товара — совсем другое.</p>
+        <span class="tag">География поиска: расширена</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION: МОСКВА VS АМЕРИКА ═══════════ -->
+<section class="section section-alt">
+  <div class="section-inner fade">
+    <div class="section-emoji">⚔️</div>
+    <h2 class="section-title">Москва vs Америка</h2>
+    <p class="section-sub">Сравнительная таблица для принятия стратегического решения</p>
+
+    <table class="vs-table">
+      <thead>
+        <tr><th>Критерий</th><th>Москва 🇷🇺</th><th>Америка 🇺🇸</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Расстояние от папы</td><td>40 минут на машине 😰</td><td>10 часов на самолёте 😌</td></tr>
+        <tr><td>Вероятность внезапной проверки</td><td>97%</td><td>0.001%</td></tr>
+        <tr><td>Хинкал на ужин</td><td>Каждый день (принудительно)</td><td>Когда захочешь (добровольно)</td></tr>
+        <tr><td>Вопрос «когда замуж?»</td><td>Каждую неделю</td><td>Никогда</td></tr>
+        <tr><td>Можно гулять после 21:00</td><td>Только если не узнают</td><td>Это называется «вечер»</td></tr>
+        <tr><td>Кофе в руке</td><td>«Зачем деньги тратишь?»</td><td>Культурная необходимость</td></tr>
+        <tr><td>Личное пространство</td><td>Что это?</td><td>Конституционное право</td></tr>
+        <tr><td>Карьерные возможности</td><td>Хорошие</td><td>Безграничные</td></tr>
+        <tr><td>Сосед дяди знает твои дела</td><td>Да, и уже рассказал</td><td>Сосед не знает твоего имени</td></tr>
+        <tr><td>Средний возраст «когда пора замуж»</td><td>20 лет (просрочено)</td><td>32 года (впереди десятилетие)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION: ЧЕЧЕНСКИЕ МУЖИКИ ═══════════ -->
+<section class="section">
+  <div class="section-inner fade">
+    <div class="section-emoji">👨‍🦰</div>
+    <h2 class="section-title">Проблема с местным ассортиментом</h2>
+    <p class="section-sub">Почему пул кандидатов в радиусе 2000 км — это тупик</p>
+
+    <div class="reason-grid">
+
+      <div class="reason" style="border-left-color:var(--purple)">
+        <h3>🏔️ Вариант А: Чеченский классик</h3>
+        <p>Ездит на тонированной Приоре. Пишет «салам» в директ. Считает, что женщина должна готовить, молчать и восхищаться. Его главное достижение — 5000 подписчиков в TikTok, где он кружит на BMW на фоне гор. При этом BMW — дядина.</p>
+      </div>
+
+      <div class="reason" style="border-left-color:var(--orange)">
+        <h3>💰 Вариант Б: Московский бизнесмен</h3>
+        <p>45 лет, Порше Кайен, ресторан «Белуга» каждую пятницу. Разведён дважды. Говорит «я тебе мир покажу», имея в виду Дубай и Мальдивы по кругу. Ищет «скромную девочку, но чтобы ноги от ушей». Альбика, ты магистр МГИМО. Этот вариант — не для тебя.</p>
+      </div>
+
+      <div class="reason" style="border-left-color:var(--green)">
+        <h3>🌍 Вариант В: Международный рынок</h3>
+        <p>Человек, который не спрашивает «из какого ты тейпа?» при первой встрече. Который уважает твоё образование не потому что «мама будет довольна», а потому что ему реально интересно. Который не пишет «салам» в директ, а приглашает на кофе и разговаривает как нормальный человек. Такие есть. Но не в радиусе маршрутки «Грозный — Москва».</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION: STATS ═══════════ -->
+<section class="section section-dark">
+  <div class="section-inner fade">
+    <div class="section-emoji">📊</div>
+    <h2 class="section-title">Цифры не врут</h2>
+    <p class="section-sub">Статистика, собранная аналитическим отделом (тоже мной)</p>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-num">331M</div>
+        <div class="stat-label">Население Америки — и почти никто не знает твоих родственников</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">9 ч</div>
+        <div class="stat-label">Минимальный перелёт — достаточно, чтобы папа не приехал «посмотреть, как ты там»</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Количество кофеен, куда можно зайти, не встретив знакомых из Грозного</div>
+      </div>
+    </div>
+
+    <div class="quote-card" style="margin-top:2rem">
+      <p>В Чечне говорят: «Гость — от Бога». В Америке говорят: «Ваш заказ — двойной латте с овсяным молоком, имя на стакане написано неправильно». И никто не спрашивает, чья ты дочь.</p>
+      <div class="author">— Народная мудрость (адаптированная)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION: ПЛАН ПОБЕГА ═══════════ -->
+<section class="section">
+  <div class="section-inner fade">
+    <div class="section-emoji">🗺️</div>
+    <h2 class="section-title">План побега</h2>
+    <p class="section-sub">Пошаговая инструкция по обретению свободы</p>
+
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h3>Шаг 1: Осознание 💡</h3>
+        <p>Ты читаешь эту страницу. Значит, семя сомнения уже посажено. Прекрасно. Продолжай.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h3>Шаг 2: Внутренняя работа 🧠</h3>
+        <p>Отпусти мысль «а что скажут люди?» Люди скажут в любом случае. Даже если ты останешься дома и выйдешь замуж за соседского сына — они всё равно найдут, что обсудить. Так зачем стараться?</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h3>Шаг 3: Подготовка документов 📄</h3>
+        <p>Загранпаспорт — есть. Диплом МГИМО — козырь. Английский — предположительно, прекрасный. Всё остальное — решаемо. У тебя больше квалификаций, чем у 90% людей, которые уже там живут.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h3>Шаг 4: Сообщить маме (осторожно) 📞</h3>
+        <p>«Мама, я еду учиться / работать / на стажировку». Ни в коем случае не говорить: «Мама, я валю, потому что мне надоело». Нужна дипломатия уровня… ну, уровня МГИМО. У тебя диплом — пользуйся.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h3>Шаг 5: Взлёт 🛫</h3>
+        <p>Сесть в самолёт. Выключить телефон. Включить после взлёта. Написать: «Долетела, всё хорошо, не волнуйтесь». И начать жить.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION: ЧЕКЛИСТ ═══════════ -->
+<section class="section section-alt">
+  <div class="section-inner fade">
+    <div class="section-emoji">✅</div>
+    <h2 class="section-title">Чеклист готовности</h2>
+    <p class="section-sub">Отмечай, что уже есть</p>
+
+    <div class="check-grid">
+      <div class="check-item"><span class="emoji">🎓</span><span>Диплом магистра МГИМО (МИД РФ, не шутка)</span></div>
+      <div class="check-item"><span class="emoji">🌍</span><span>Знание иностранных языков</span></div>
+      <div class="check-item"><span class="emoji">🧠</span><span>Мозги, которые работают лучше, чем тонированная Приора</span></div>
+      <div class="check-item"><span class="emoji">💪</span><span>Характер — выросла среди чеченских мужчин, а значит, ей ничего не страшно</span></div>
+      <div class="check-item"><span class="emoji">🌸</span><span>Внешность — без комментариев, фото выше</span></div>
+      <div class="check-item"><span class="emoji">✈️</span><span>Загранпаспорт (предположительно)</span></div>
+      <div class="check-item"><span class="emoji">🔥</span><span>Желание жить на своих условиях</span></div>
+      <div class="check-item"><span class="emoji">🇺🇸</span><span>Знакомый в Америке, который поможет (привет, это я)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION: FINAL CTA ═══════════ -->
+<section class="section section-red">
+  <div class="cta-block fade">
+    <div style="font-size:3rem;margin-bottom:1rem">🗽</div>
+    <h2>Альбика, жизнь одна.<br>И она точно не помещается в Грозном.</h2>
+    <p>Ты уже всё сделала правильно: получила образование, выучила языки, повзрослела. Осталось только одно — перестать спрашивать разрешение и начать жить. Мир большой. Америка ждёт. Ты готова.</p>
+    <a href="#top" class="cta-big">🇺🇸 Я готова</a>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <p>Сделано с любовью и лёгким безумием · 2026</p>
+  <p style="margin-top:.3rem;font-size:.7rem">Ни одна чеченская традиция не пострадала при создании этого сайта. Ну, почти.</p>
+</footer>
+
+<script>
+var faders=document.querySelectorAll('.fade');
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
+},{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+faders.forEach(function(f){obs.observe(f)});
+</script>
+</body>
+</html>
